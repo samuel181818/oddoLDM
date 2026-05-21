@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instalación - SGE Odoo</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/14d940f6b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="./img/recursos/logo.png" alt="Logo Odoo" onerror="this.style.display='none'">
+        <h1>SGE · ODOO</h1>
+    </header>
+
+    <nav>
+        <div class="menu-button">
+            <p>Menú</p>
+            <button onclick="mostrarMenu()"></button>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="que-es-sge.html">¿QUÉ ES UN SGE?</a></li>
+            <li><a href="instalacion.html">INSTALACIÓN</a></li>
+            <li><a href="administracion.html">ADMINISTRACIÓN</a></li>
+            <li><a href="acceso-seguro.html">ACCESO SEGURO</a></li>
+            <li><a href="informes.html">INFORMES</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h2>Instalación de Odoo Community</h2>
+        <p>Pasos seguidos para instalar Odoo 17 Community en una máquina con Windows.</p>
+    </section>
+
+    <main>
+        <article>
+            <h2>Requisitos previos</h2>
+            <p>Antes de empezar con la instalación es importante comprobar que el equipo cumple unos mínimos. En mi caso he hecho la instalación en un portátil con las siguientes características:</p>
+            <ul>
+                <li>Sistema operativo: Windows 10 (64 bits)</li>
+                <li>RAM: 8 GB</li>
+                <li>Espacio libre en disco: unos 4 GB</li>
+                <li>Conexión a internet (para la descarga)</li>
+            </ul>
+
+            <div class="aviso">
+                <strong>Importante:</strong> Odoo necesita PostgreSQL como base de datos. El instalador de Windows ya lo instala automáticamente, por lo que no hay que descargarlo aparte.
+            </div>
+        </article>
+
+        <article>
+            <h2>Paso 1 · Descarga del instalador</h2>
+            <p>Lo primero es ir a la web oficial de Odoo, en el apartado de <em>Download</em>, y elegir la versión Community para Windows. El archivo descargado tiene un nombre parecido a <code>odoo_17.0.latest.exe</code> y pesa unos 350 MB.</p>
+
+            <div class="placeholder">
+                [CAPTURA 1] · Página de descarga de Odoo (web oficial)
+            </div>
+        </article>
+
+        <article>
+            <h2>Paso 2 · Ejecutar el instalador</h2>
+            <p>Al hacer doble clic sobre el ejecutable, aparece el asistente de instalación. El primer paso pide seleccionar el idioma:</p>
+
+            <div class="placeholder">
+                [CAPTURA 2] · Selección del idioma del instalador
+            </div>
+
+            <p>A continuación se acepta el acuerdo de licencia (LGPLv3) y se elige el tipo de instalación. Yo he dejado la opción <strong>"All in One"</strong>, que instala tanto el servidor de Odoo como PostgreSQL.</p>
+
+            <div class="placeholder">
+                [CAPTURA 3] · Selección del tipo de instalación (All in One)
+            </div>
+        </article>
+
+        <article>
+            <h2>Paso 3 · Configuración de PostgreSQL</h2>
+            <p>El asistente pide configurar el usuario y la contraseña de la base de datos. Por defecto crea el usuario <code>openpg</code>. Es importante anotar la contraseña porque luego hará falta si se quiere acceder directamente a la base de datos.</p>
+
+            <div class="placeholder">
+                [CAPTURA 4] · Configuración del usuario y contraseña de PostgreSQL
+            </div>
+        </article>
+
+        <article>
+            <h2>Paso 4 · Carpeta de instalación</h2>
+            <p>Se elige la ruta donde se va a instalar. Por defecto es <code>C:\Program Files\Odoo 17.0</code>. Yo la he dejado tal cual.</p>
+
+            <div class="placeholder">
+                [CAPTURA 5] · Selección de la carpeta de instalación
+            </div>
+
+            <p>A partir de aquí empieza la instalación propiamente dicha. Tarda unos cuantos minutos porque también instala PostgreSQL y todas las dependencias de Python que necesita Odoo.</p>
+
+            <div class="placeholder">
+                [CAPTURA 6] · Progreso de la instalación
+            </div>
+        </article>
+
+        <article>
+            <h2>Paso 5 · Primer arranque</h2>
+            <p>Una vez termina la instalación, el servicio de Odoo se inicia automáticamente. Al abrir el navegador y entrar en <code>http://localhost:8069</code> aparece la pantalla para crear la primera base de datos:</p>
+
+            <div class="placeholder">
+                [CAPTURA 7] · Pantalla de creación de la primera base de datos
+            </div>
+
+            <p>Aquí hay que rellenar:</p>
+            <ul>
+                <li><strong>Master password:</strong> contraseña de administrador del sistema.</li>
+                <li><strong>Database name:</strong> nombre que se le quiera dar (por ejemplo, <code>empresa_demo</code>).</li>
+                <li><strong>Email y password:</strong> usuario administrador de esta base de datos.</li>
+                <li><strong>Idioma y país:</strong> en mi caso Español y España.</li>
+                <li><strong>Demo data:</strong> lo marco para tener datos de ejemplo y poder hacer pruebas.</li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>Paso 6 · Comprobación final</h2>
+            <p>Tras pulsar en <em>Create database</em>, Odoo carga la pantalla principal. Si llegamos aquí, la instalación ha sido un éxito.</p>
+
+            <div class="placeholder">
+                [CAPTURA 8] · Pantalla principal de Odoo después de crear la base de datos
+            </div>
+
+            <p>El siguiente paso es ir a <a href="administracion.html">Administración</a> para empezar a configurar el sistema.</p>
+
+            <a href="administracion.html" class="boton">Ir a la administración →</a>
+        </article>
+    </main>
+
+    <aside>
+        <h3>Resumen rápido</h3>
+        <div class="dato">
+            <p><strong>Versión instalada:</strong> Odoo 17 Community</p>
+        </div>
+        <div class="dato">
+            <p><strong>Puerto:</strong> 8069</p>
+        </div>
+        <div class="dato">
+            <p><strong>BBDD:</strong> PostgreSQL (incluida)</p>
+        </div>
+        <div class="dato">
+            <p><strong>Acceso local:</strong> http://localhost:8069</p>
+        </div>
+
+        <h3>Enlaces útiles</h3>
+        <ul>
+            <li><a href="https://www.odoo.com/page/download" target="_blank">Descarga Odoo</a></li>
+            <li><a href="https://www.odoo.com/documentation/17.0/administration/install.html" target="_blank">Guía oficial</a></li>
+        </ul>
+    </aside>
+
+    <footer>
+        <p>Proyecto SGE · Odoo &copy; 2026</p>
+        <p>
+            <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </p>
+    </footer>
+
+    <button id="subirArriba" onclick="subirArriba()" title="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso seguro - SGE Odoo</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/14d940f6b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="./img/recursos/logo.png" alt="Logo Odoo" onerror="this.style.display='none'">
+        <h1>SGE · ODOO</h1>
+    </header>
+
+    <nav>
+        <div class="menu-button">
+            <p>Menú</p>
+            <button onclick="mostrarMenu()"></button>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="que-es-sge.html">¿QUÉ ES UN SGE?</a></li>
+            <li><a href="instalacion.html">INSTALACIÓN</a></li>
+            <li><a href="administracion.html">ADMINISTRACIÓN</a></li>
+            <li><a href="acceso-seguro.html">ACCESO SEGURO</a></li>
+            <li><a href="informes.html">INFORMES</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h2>Acceso seguro a la información</h2>
+        <p>Roles, grupos y privilegios en Odoo.</p>
+    </section>
+
+    <main>
+        <article>
+            <h2>Mecanismos de seguridad en Odoo</h2>
+            <p>Odoo cuenta con un sistema de seguridad bastante completo. La idea principal es que cada usuario solo pueda ver y modificar la información que le corresponde según su puesto en la empresa.</p>
+            <p>Los principales mecanismos de seguridad son:</p>
+            <ul>
+                <li><strong>Autenticación:</strong> cada usuario tiene un login y contraseña personal.</li>
+                <li><strong>Grupos (roles):</strong> cada usuario pertenece a uno o varios grupos, y cada grupo tiene unos permisos concretos.</li>
+                <li><strong>Reglas de acceso (ACL):</strong> definen qué grupos pueden leer, crear, modificar o borrar registros de un determinado modelo.</li>
+                <li><strong>Reglas de registro (Record Rules):</strong> filtros que limitan qué registros concretos puede ver un usuario (por ejemplo, "solo mis oportunidades").</li>
+                <li><strong>Autenticación en dos pasos (2FA):</strong> se puede activar para añadir una capa más de seguridad.</li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>Tipos de usuario</h2>
+            <p>En Odoo hay tres tipos principales de usuario:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Para qué se usa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Interno</strong></td>
+                        <td>Trabajadores de la empresa. Tienen acceso al backend (la interfaz completa).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Portal</strong></td>
+                        <td>Clientes o proveedores externos. Solo pueden ver una parte limitada (sus pedidos, sus facturas...).</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Público</strong></td>
+                        <td>Cualquier visitante anónimo. Acceso muy restringido, solo a la parte web pública.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+
+        <article>
+            <h2>Grupos y roles</h2>
+            <p>Para que un usuario interno tenga permisos sobre un módulo concreto hay que asignarle un grupo dentro de ese módulo. Por ejemplo, dentro del módulo de <strong>Ventas</strong> existen estos grupos:</p>
+            <ul>
+                <li><strong>Usuario: solo documentos propios</strong> — solo ve los presupuestos/pedidos que ha creado él.</li>
+                <li><strong>Usuario: todos los documentos</strong> — ve los de todos los compañeros.</li>
+                <li><strong>Administrador</strong> — además puede configurar todo el módulo.</li>
+            </ul>
+
+            <div class="placeholder">
+                [CAPTURA 1] · Asignación de grupos al editar un usuario
+            </div>
+
+            <p>Para asignar los grupos vamos a <strong>Ajustes → Usuarios → (seleccionar usuario)</strong> y en cada módulo desplegamos el menú para elegir el nivel de permiso.</p>
+        </article>
+
+        <article>
+            <h2>Ejemplo práctico</h2>
+            <p>Para esta práctica he creado tres usuarios con roles diferentes:</p>
+            <ol>
+                <li><strong>Admin general</strong> → acceso a todo.</li>
+                <li><strong>Comercial</strong> → solo Ventas y CRM, y únicamente sus propios documentos.</li>
+                <li><strong>Almacén</strong> → solo Inventario.</li>
+            </ol>
+
+            <div class="placeholder">
+                [CAPTURA 2] · Listado de usuarios creados con sus distintos roles
+            </div>
+
+            <p>Después he iniciado sesión con cada uno para comprobar que el sistema funciona como se espera. Por ejemplo, al entrar con el usuario <em>Comercial</em>, en el menú principal solo aparecen las apps de Ventas, CRM y Contactos. El módulo de Inventario o de Ajustes no aparece.</p>
+
+            <div class="placeholder">
+                [CAPTURA 3] · Vista de menú con un usuario Comercial (sin Inventario)
+            </div>
+        </article>
+
+        <article>
+            <h2>Reglas de registro</h2>
+            <p>Las reglas de registro son condiciones que se aplican a cada modelo y que filtran qué datos puede ver cada grupo. Por ejemplo, la regla por defecto del módulo CRM dice que un usuario del grupo "Usuario: solo documentos propios" solo puede ver las oportunidades donde él es el vendedor asignado.</p>
+
+            <div class="placeholder">
+                [CAPTURA 4] · Pantalla de reglas de registro (con modo desarrollador activado)
+            </div>
+
+            <p>Las reglas se pueden consultar desde <strong>Ajustes → Técnico → Seguridad → Reglas de registro</strong> (hay que tener activado el modo desarrollador).</p>
+        </article>
+
+        <article>
+            <h2>Autenticación en dos pasos (2FA)</h2>
+            <p>Cada usuario puede activar la autenticación en dos pasos desde su perfil. Una vez activada, además de la contraseña hay que introducir un código generado por una app como Google Authenticator o Authy.</p>
+
+            <div class="placeholder">
+                [CAPTURA 5] · Activación de 2FA en el perfil de usuario
+            </div>
+
+            <div class="aviso">
+                <strong>Buenas prácticas de seguridad:</strong>
+                <ul>
+                    <li>Usar contraseñas largas y diferentes para cada usuario.</li>
+                    <li>Activar la autenticación en dos pasos para los usuarios con más permisos (sobre todo el administrador).</li>
+                    <li>No compartir cuentas entre varias personas.</li>
+                    <li>Cambiar la contraseña del usuario maestro de la BBDD por una segura.</li>
+                    <li>Revisar de vez en cuando los usuarios activos y desactivar los que ya no se usen.</li>
+                </ul>
+            </div>
+
+            <a href="informes.html" class="boton">Ver elaboración de informes →</a>
+        </article>
+    </main>
+
+    <aside>
+        <h3>Tipos de usuario</h3>
+        <div class="dato"><p>🔑 Interno</p></div>
+        <div class="dato"><p>👤 Portal</p></div>
+        <div class="dato"><p>🌐 Público</p></div>
+
+        <h3>Recuerda</h3>
+        <div class="dato">
+            <p>Sin grupo asignado, el usuario no puede ver el módulo.</p>
+        </div>
+        <div class="dato">
+            <p>2FA = capa extra de seguridad.</p>
+        </div>
+    </aside>
+
+    <footer>
+        <p>Proyecto SGE · Odoo &copy; 2026</p>
+        <p>
+            <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </p>
+    </footer>
+
+    <button id="subirArriba" onclick="subirArriba()" title="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

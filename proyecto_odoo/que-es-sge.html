@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Qué es un SGE? - SGE Odoo</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/14d940f6b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="./img/recursos/logo.png" alt="Logo Odoo" onerror="this.style.display='none'">
+        <h1>SGE · ODOO</h1>
+    </header>
+
+    <nav>
+        <div class="menu-button">
+            <p>Menú</p>
+            <button onclick="mostrarMenu()"></button>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="que-es-sge.html">¿QUÉ ES UN SGE?</a></li>
+            <li><a href="instalacion.html">INSTALACIÓN</a></li>
+            <li><a href="administracion.html">ADMINISTRACIÓN</a></li>
+            <li><a href="acceso-seguro.html">ACCESO SEGURO</a></li>
+            <li><a href="informes.html">INFORMES</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h2>¿Qué es un Sistema de Gestión Empresarial?</h2>
+        <p>Tipos, características y ventajas de los principales SGE.</p>
+    </section>
+
+    <main>
+        <article>
+            <h2>Definición</h2>
+            <p>Un <strong>Sistema de Gestión Empresarial (SGE)</strong>, también conocido por sus siglas en inglés como ERP (<em>Enterprise Resource Planning</em>), es un conjunto de aplicaciones informáticas que integran y automatizan muchas de las prácticas de negocio asociadas con los aspectos operativos o productivos de una empresa.</p>
+            <p>Dicho de otra forma: es un software pensado para gestionar de forma centralizada todos los recursos y procesos de una empresa, evitando tener un programa distinto para cada cosa.</p>
+        </article>
+
+        <article>
+            <h2>Tipos de SGE</h2>
+            <p>Aunque normalmente se habla de "ERP" como concepto general, dentro de los Sistemas de Gestión Empresarial existen varios tipos según el área de la empresa a la que se dirigen:</p>
+
+            <h3>1. ERP (Enterprise Resource Planning)</h3>
+            <p>Es el más completo. Gestiona todas las áreas de la empresa: contabilidad, ventas, compras, almacén, recursos humanos, producción, etc. Ejemplos: <strong>SAP</strong>, <strong>Odoo</strong>, <strong>Microsoft Dynamics</strong>, <strong>Dolibarr</strong>.</p>
+
+            <h3>2. CRM (Customer Relationship Management)</h3>
+            <p>Sistema orientado a la gestión de la relación con los clientes: contactos, oportunidades de venta, campañas de marketing, soporte post-venta… Ejemplos: <strong>Salesforce</strong>, <strong>HubSpot</strong>, <strong>SuiteCRM</strong>.</p>
+
+            <h3>3. SCM (Supply Chain Management)</h3>
+            <p>Enfocado en la cadena de suministro: proveedores, logística, almacenes, distribución. Ejemplos: <strong>Oracle SCM</strong>, <strong>SAP SCM</strong>.</p>
+
+            <h3>4. HRM (Human Resource Management)</h3>
+            <p>Gestión de Recursos Humanos: nóminas, fichajes, formación, evaluaciones. Ejemplos: <strong>Workday</strong>, <strong>BambooHR</strong>, <strong>Sage HR</strong>.</p>
+
+            <h3>5. BI (Business Intelligence)</h3>
+            <p>No es un SGE como tal, pero suele integrarse. Se encarga del análisis de datos: cuadros de mando, KPIs, informes avanzados. Ejemplos: <strong>Power BI</strong>, <strong>Tableau</strong>, <strong>Metabase</strong>.</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Para qué sirve</th>
+                        <th>Ejemplo libre</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>ERP</td><td>Gestión global de la empresa</td><td>Odoo, Dolibarr</td></tr>
+                    <tr><td>CRM</td><td>Relación con clientes</td><td>SuiteCRM</td></tr>
+                    <tr><td>SCM</td><td>Cadena de suministro</td><td>OFBiz</td></tr>
+                    <tr><td>HRM</td><td>Recursos Humanos</td><td>OrangeHRM</td></tr>
+                    <tr><td>BI</td><td>Análisis de datos</td><td>Metabase</td></tr>
+                </tbody>
+            </table>
+        </article>
+
+        <article>
+            <h2>Características principales</h2>
+            <ul>
+                <li><strong>Integración:</strong> toda la información está conectada. Lo que se introduce en un módulo se ve reflejado en los demás.</li>
+                <li><strong>Modularidad:</strong> se pueden instalar solo los módulos que la empresa necesita.</li>
+                <li><strong>Centralización de la información:</strong> existe una única base de datos, evitando duplicados.</li>
+                <li><strong>Escalabilidad:</strong> el sistema crece a medida que crece la empresa.</li>
+                <li><strong>Trazabilidad:</strong> se puede saber quién hizo qué cosa y cuándo.</li>
+                <li><strong>Seguridad:</strong> el acceso a la información se controla mediante roles y permisos.</li>
+                <li><strong>Automatización de procesos:</strong> reduce tareas repetitivas.</li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>Ventajas de implantar un SGE</h2>
+            <ol>
+                <li>Mejora la toma de decisiones al tener información actualizada y centralizada.</li>
+                <li>Reduce errores al evitar introducir los mismos datos varias veces.</li>
+                <li>Ahorra tiempo y dinero a largo plazo.</li>
+                <li>Permite estandarizar los procesos de la empresa.</li>
+                <li>Facilita el cumplimiento de la normativa (facturación electrónica, RGPD, etc.).</li>
+                <li>Mejora la comunicación entre los departamentos.</li>
+            </ol>
+
+            <div class="aviso">
+                <strong>Nota:</strong> implantar un SGE no es algo trivial. Requiere formación del personal, una buena planificación y, en muchos casos, adaptar los procesos de la empresa al software.
+            </div>
+        </article>
+
+        <article>
+            <h2>Principales SGE del mercado</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>SGE</th>
+                        <th>Tipo</th>
+                        <th>Licencia</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>SAP</td><td>ERP</td><td>Propietaria</td><td>El más usado en grandes empresas.</td></tr>
+                    <tr><td>Odoo</td><td>ERP / CRM</td><td>Libre (Community)</td><td>Muy completo y modular.</td></tr>
+                    <tr><td>Dolibarr</td><td>ERP / CRM</td><td>Libre (GPL)</td><td>Sencillo, ideal para PYMEs.</td></tr>
+                    <tr><td>Microsoft Dynamics</td><td>ERP / CRM</td><td>Propietaria</td><td>Buena integración con Office.</td></tr>
+                    <tr><td>ERPNext</td><td>ERP</td><td>Libre</td><td>Alternativa moderna a Odoo.</td></tr>
+                </tbody>
+            </table>
+        </article>
+    </main>
+
+    <aside>
+        <h3>En esta página</h3>
+        <ul>
+            <li><a href="#">Definición</a></li>
+            <li><a href="#">Tipos de SGE</a></li>
+            <li><a href="#">Características</a></li>
+            <li><a href="#">Ventajas</a></li>
+            <li><a href="#">SGE del mercado</a></li>
+        </ul>
+        <h3>Sabías que...</h3>
+        <div class="dato">
+            <p>El primer ERP de la historia fue desarrollado por <strong>SAP</strong> en los años 70.</p>
+        </div>
+        <div class="dato">
+            <p>Odoo nació en Bélgica en 2005 con el nombre de <em>TinyERP</em>.</p>
+        </div>
+    </aside>
+
+    <footer>
+        <p>Proyecto SGE · Odoo &copy; 2026</p>
+        <p>
+            <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </p>
+    </footer>
+
+    <button id="subirArriba" onclick="subirArriba()" title="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

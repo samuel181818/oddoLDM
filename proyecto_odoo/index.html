@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - SGE Odoo</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/14d940f6b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="./img/recursos/logo.png" alt="Logo Odoo" onerror="this.style.display='none'">
+        <h1>SGE · ODOO</h1>
+    </header>
+
+    <nav>
+        <div class="menu-button">
+            <p>Menú</p>
+            <button onclick="mostrarMenu()"></button>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="que-es-sge.html">¿QUÉ ES UN SGE?</a></li>
+            <li><a href="instalacion.html">INSTALACIÓN</a></li>
+            <li><a href="administracion.html">ADMINISTRACIÓN</a></li>
+            <li><a href="acceso-seguro.html">ACCESO SEGURO</a></li>
+            <li><a href="informes.html">INFORMES</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h2>Sistemas de Gestión Empresarial</h2>
+        <p>Conoce qué es un SGE, sus tipos y características, y descubre cómo instalar, configurar y trabajar con Odoo, uno de los sistemas de gestión más utilizados del mundo.</p>
+    </section>
+
+    <main>
+        <article>
+            <h2>Bienvenido</h2>
+            <p>Este sitio web ha sido desarrollado como parte de un proyecto de clase para el módulo de Sistemas de Gestión Empresarial. A lo largo de las distintas páginas vamos a ver qué es un SGE, qué tipos existen, sus ventajas, y se documentará todo el proceso de instalación, configuración y uso del sistema <strong>Odoo Community</strong>.</p>
+            <p>El objetivo es mostrar de forma práctica cómo se trabaja con una herramienta real de gestión empresarial: desde levantar el servicio en una máquina local hasta generar informes y exportar la información.</p>
+
+            <h3>¿Qué vas a encontrar aquí?</h3>
+            <div class="tarjetas">
+                <div class="card">
+                    <h3><i class="fa-solid fa-book"></i> Teoría</h3>
+                    <p>Definición de los SGE, tipos principales (ERP, CRM, SCM, etc.) y sus características.</p>
+                    <a href="que-es-sge.html" class="boton">Ir a la teoría</a>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-download"></i> Instalación</h3>
+                    <p>Pasos seguidos para instalar Odoo Community en una máquina local, con capturas reales del proceso.</p>
+                    <a href="instalacion.html" class="boton">Ver instalación</a>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-gears"></i> Administración</h3>
+                    <p>Configuración inicial, módulos, creación de empresa y usuarios.</p>
+                    <a href="administracion.html" class="boton">Ver administración</a>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-shield-halved"></i> Acceso seguro</h3>
+                    <p>Roles, permisos y mecanismos de seguridad en el acceso a la información.</p>
+                    <a href="acceso-seguro.html" class="boton">Ver seguridad</a>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-chart-line"></i> Informes</h3>
+                    <p>Generación de informes desde los distintos módulos.</p>
+                    <a href="informes.html" class="boton">Ver informes</a>
+                </div>
+                <div class="card">
+                    <h3><i class="fa-solid fa-file-export"></i> Exportación</h3>
+                    <p>Procedimientos para exportar datos a otros formatos (CSV, XLSX, PDF).</p>
+                    <a href="informes.html#exportacion" class="boton">Ver exportación</a>
+                </div>
+            </div>
+        </article>
+
+        <article>
+            <h2>¿Por qué Odoo?</h2>
+            <p>Odoo es una suite de aplicaciones de gestión empresarial de código abierto. Su versión <em>Community</em> es totalmente gratuita y permite gestionar prácticamente cualquier área de una empresa: ventas, compras, almacén, contabilidad, RRHH, fabricación, CRM, etc.</p>
+            <p>Lo hemos elegido por estos motivos:</p>
+            <ul>
+                <li>Es <strong>gratuito</strong> y de código abierto.</li>
+                <li>Tiene una comunidad muy grande, hay muchísima documentación.</li>
+                <li>Su interfaz es moderna y bastante intuitiva.</li>
+                <li>Es modular: puedes activar solo lo que necesitas.</li>
+                <li>Se puede instalar en Windows, Linux y Mac sin demasiada complicación.</li>
+            </ul>
+        </article>
+    </main>
+
+    <aside>
+        <h3>Información rápida</h3>
+        <div class="dato">
+            <p><strong>SGE elegido:</strong> Odoo Community 17</p>
+        </div>
+        <div class="dato">
+            <p><strong>Sistema operativo:</strong> Windows 10/11</p>
+        </div>
+        <div class="dato">
+            <p><strong>Licencia:</strong> LGPLv3 (libre)</p>
+        </div>
+        <h3>Enlaces de interés</h3>
+        <ul>
+            <li><a href="https://www.odoo.com" target="_blank">Web oficial</a></li>
+            <li><a href="https://www.odoo.com/documentation" target="_blank">Documentación</a></li>
+            <li><a href="https://github.com/odoo/odoo" target="_blank">Repositorio GitHub</a></li>
+        </ul>
+    </aside>
+
+    <footer>
+        <p>Proyecto SGE · Odoo &copy; 2026</p>
+        <p>
+            <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </p>
+    </footer>
+
+    <button id="subirArriba" onclick="subirArriba()" title="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

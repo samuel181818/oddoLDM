@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración - SGE Odoo</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/14d940f6b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="./img/recursos/logo.png" alt="Logo Odoo" onerror="this.style.display='none'">
+        <h1>SGE · ODOO</h1>
+    </header>
+
+    <nav>
+        <div class="menu-button">
+            <p>Menú</p>
+            <button onclick="mostrarMenu()"></button>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="que-es-sge.html">¿QUÉ ES UN SGE?</a></li>
+            <li><a href="instalacion.html">INSTALACIÓN</a></li>
+            <li><a href="administracion.html">ADMINISTRACIÓN</a></li>
+            <li><a href="acceso-seguro.html">ACCESO SEGURO</a></li>
+            <li><a href="informes.html">INFORMES</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h2>Administración y Configuración</h2>
+        <p>Cómo configurar la empresa, instalar módulos y dejar Odoo listo para trabajar.</p>
+    </section>
+
+    <main>
+        <article>
+            <h2>Acceso al panel de administración</h2>
+            <p>Después de la instalación y de haber creado la base de datos, accedemos a Odoo en <code>http://localhost:8069</code>. Iniciamos sesión con el usuario y contraseña que pusimos al crear la BBDD.</p>
+            <p>La pantalla principal muestra el listado de aplicaciones (apps) disponibles. Al ser una instalación nueva, prácticamente no hay nada activado todavía.</p>
+
+            <div class="placeholder">
+                [CAPTURA 1] · Pantalla principal de Odoo recién instalado
+            </div>
+        </article>
+
+        <article>
+            <h2>Configuración de la empresa</h2>
+            <p>Lo primero que se hace es configurar los datos de la empresa. Para ello vamos a <strong>Ajustes → Usuarios y empresas → Empresas</strong>. Allí seleccionamos la empresa por defecto (<em>"My Company"</em>) y rellenamos los datos reales: nombre, dirección, CIF, logo, etc.</p>
+
+            <div class="placeholder">
+                [CAPTURA 2] · Formulario de configuración de la empresa
+            </div>
+
+            <p>Estos datos son importantes porque luego aparecen en facturas, presupuestos y todos los informes que se generen desde Odoo.</p>
+        </article>
+
+        <article>
+            <h2>Instalación de módulos (Apps)</h2>
+            <p>Odoo funciona por módulos. Por defecto vienen muy pocos activados, así que hay que instalar los que se necesiten. Para esta práctica he activado los siguientes:</p>
+            <ul>
+                <li><strong>CRM:</strong> para gestionar oportunidades y clientes.</li>
+                <li><strong>Ventas:</strong> presupuestos, pedidos y facturación.</li>
+                <li><strong>Inventario:</strong> control de almacén.</li>
+                <li><strong>Contactos:</strong> agenda de clientes y proveedores.</li>
+                <li><strong>Facturación:</strong> facturas y pagos.</li>
+            </ul>
+
+            <p>Para instalar un módulo basta con ir a la sección de <em>Aplicaciones</em>, buscarlo y pulsar el botón <strong>Activar</strong>.</p>
+
+            <div class="placeholder">
+                [CAPTURA 3] · Buscador de Apps con un módulo a punto de instalarse
+            </div>
+
+            <div class="aviso">
+                <strong>Truco:</strong> al instalar un módulo, Odoo carga automáticamente las dependencias (otros módulos que necesita). Por ejemplo, al instalar <em>Ventas</em> también se instala <em>Facturación</em>.
+            </div>
+        </article>
+
+        <article>
+            <h2>Ajustes generales</h2>
+            <p>En <strong>Ajustes → Ajustes generales</strong> se configuran cosas como la moneda, el idioma de la interfaz, el modo desarrollador, los métodos de pago o las opciones de cada uno de los módulos instalados.</p>
+
+            <div class="placeholder">
+                [CAPTURA 4] · Pantalla de Ajustes generales
+            </div>
+
+            <p>Para esta práctica he activado el <strong>modo desarrollador</strong>, porque permite ver opciones avanzadas y acceder a información técnica de cada registro, lo cual es útil para entender cómo funciona Odoo por dentro.</p>
+        </article>
+
+        <article>
+            <h2>Creación de usuarios</h2>
+            <p>Para que más personas puedan acceder al sistema, hay que dar de alta usuarios. Se hace desde <strong>Ajustes → Usuarios y empresas → Usuarios</strong>.</p>
+            <p>Al crear un usuario nuevo se le indica:</p>
+            <ol>
+                <li>Nombre y correo electrónico (el correo es lo que usará como login).</li>
+                <li>Tipo de usuario: Interno, Portal o Público.</li>
+                <li>Permisos en cada uno de los módulos instalados.</li>
+                <li>Empresa (en caso de tener varias).</li>
+            </ol>
+
+            <div class="placeholder">
+                [CAPTURA 5] · Formulario de creación de un nuevo usuario
+            </div>
+
+            <p>Cuando se guarda el usuario, Odoo le envía un correo con un enlace para que establezca su propia contraseña.</p>
+        </article>
+
+        <article>
+            <h2>Copias de seguridad de la base de datos</h2>
+            <p>Una parte importante de la administración es hacer copias de seguridad. Odoo permite hacerlas desde la pantalla de gestión de bases de datos (<code>http://localhost:8069/web/database/manager</code>).</p>
+
+            <div class="placeholder">
+                [CAPTURA 6] · Pantalla de gestor de bases de datos
+            </div>
+
+            <p>Desde ahí se puede:</p>
+            <ul>
+                <li>Crear copias de seguridad (.zip) que incluyen tanto los datos como los archivos.</li>
+                <li>Restaurar una copia anterior.</li>
+                <li>Duplicar una base de datos (muy útil para hacer pruebas).</li>
+                <li>Eliminar bases de datos.</li>
+            </ul>
+
+            <div class="aviso">
+                <strong>Recomendación:</strong> es buena idea hacer una copia de seguridad antes de instalar módulos nuevos o de hacer cambios importantes en la configuración.
+            </div>
+
+            <a href="acceso-seguro.html" class="boton">Continuar con acceso seguro →</a>
+        </article>
+    </main>
+
+    <aside>
+        <h3>Apps instaladas</h3>
+        <div class="dato"><p>📊 CRM</p></div>
+        <div class="dato"><p>💼 Ventas</p></div>
+        <div class="dato"><p>📦 Inventario</p></div>
+        <div class="dato"><p>👥 Contactos</p></div>
+        <div class="dato"><p>💶 Facturación</p></div>
+
+        <h3>Ruta importante</h3>
+        <div class="dato">
+            <p>Ajustes → Usuarios y empresas → Usuarios</p>
+        </div>
+    </aside>
+
+    <footer>
+        <p>Proyecto SGE · Odoo &copy; 2026</p>
+        <p>
+            <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </p>
+    </footer>
+
+    <button id="subirArriba" onclick="subirArriba()" title="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informes y exportación - SGE Odoo</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/14d940f6b6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <img src="./img/recursos/logo.png" alt="Logo Odoo" onerror="this.style.display='none'">
+        <h1>SGE · ODOO</h1>
+    </header>
+
+    <nav>
+        <div class="menu-button">
+            <p>Menú</p>
+            <button onclick="mostrarMenu()"></button>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="que-es-sge.html">¿QUÉ ES UN SGE?</a></li>
+            <li><a href="instalacion.html">INSTALACIÓN</a></li>
+            <li><a href="administracion.html">ADMINISTRACIÓN</a></li>
+            <li><a href="acceso-seguro.html">ACCESO SEGURO</a></li>
+            <li><a href="informes.html">INFORMES</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <h2>Informes y exportación de información</h2>
+        <p>Cómo generar informes desde Odoo y exportar los datos a otros formatos.</p>
+    </section>
+
+    <main>
+        <article>
+            <h2>Tipos de informes en Odoo</h2>
+            <p>Odoo permite generar informes desde casi cualquier módulo. Los principales tipos son:</p>
+            <ul>
+                <li><strong>Informes en PDF:</strong> facturas, presupuestos, albaranes, recibos... Son los documentos "oficiales" que se envían a clientes y proveedores.</li>
+                <li><strong>Vistas analíticas (Pivot y Gráfico):</strong> resúmenes interactivos donde se pueden agrupar y comparar datos.</li>
+                <li><strong>Cuadros de mando (Dashboards):</strong> los módulos como CRM o Ventas tienen su propio panel con los indicadores principales.</li>
+                <li><strong>Informes financieros:</strong> balance, pérdidas y ganancias, libro mayor (en el módulo de Contabilidad).</li>
+            </ul>
+        </article>
+
+        <article>
+            <h2>Ejemplo · Generar una factura en PDF</h2>
+            <p>Desde el módulo de <strong>Facturación</strong>, después de crear y validar una factura, aparece el botón <em>Imprimir → Factura</em>. Al pulsarlo, Odoo genera el PDF con los datos de la empresa, del cliente y las líneas de la factura.</p>
+
+            <div class="placeholder">
+                [CAPTURA 1] · Factura abierta en Odoo, con el botón de Imprimir
+            </div>
+
+            <div class="placeholder">
+                [CAPTURA 2] · PDF de la factura generado por Odoo
+            </div>
+
+            <p>El diseño del PDF se puede personalizar desde <strong>Ajustes → Empresas → Configurar diseño del documento</strong>, donde se elige la plantilla, los colores y se puede subir el logo.</p>
+        </article>
+
+        <article>
+            <h2>Informes interactivos · Vistas Pivot y Gráfico</h2>
+            <p>En la mayoría de listados (por ejemplo, en <em>Ventas → Pedidos</em>) hay un icono que cambia la vista a <strong>Pivot</strong> o <strong>Gráfico</strong>. Esto permite hacer análisis rápidos sin instalar nada extra.</p>
+
+            <div class="placeholder">
+                [CAPTURA 3] · Vista Pivot con un análisis de ventas por vendedor
+            </div>
+
+            <p>Por ejemplo, se puede ver:</p>
+            <ul>
+                <li>Total facturado por vendedor.</li>
+                <li>Ventas por categoría de producto.</li>
+                <li>Evolución mensual de los pedidos.</li>
+            </ul>
+
+            <div class="placeholder">
+                [CAPTURA 4] · Vista Gráfico (barras) con la evolución de ventas
+            </div>
+        </article>
+
+        <article id="exportacion">
+            <h2>Exportación de datos</h2>
+            <p>Cualquier listado de Odoo se puede exportar. El procedimiento es siempre el mismo:</p>
+            <ol>
+                <li>Ir al listado que se quiere exportar (por ejemplo, <em>Contactos</em>).</li>
+                <li>Seleccionar los registros (o todos) marcando la casilla de cabecera.</li>
+                <li>Pulsar en <em>Acciones → Exportar</em>.</li>
+                <li>Elegir los campos que se quieren incluir.</li>
+                <li>Seleccionar el formato: <strong>CSV</strong> o <strong>XLSX</strong>.</li>
+                <li>Pulsar <em>Exportar</em> y guardar el archivo.</li>
+            </ol>
+
+            <div class="placeholder">
+                [CAPTURA 5] · Ventana de exportación con campos seleccionados
+            </div>
+
+            <div class="aviso">
+                <strong>Truco:</strong> al marcar la casilla <em>"Quiero actualizar datos (importación-compatible)"</em>, el fichero exportado se puede usar después para importar registros, ya que incluye los identificadores externos (External IDs).
+            </div>
+        </article>
+
+        <article>
+            <h2>Ejemplo · Exportar el listado de clientes a Excel</h2>
+            <p>Como ejemplo concreto, vamos a exportar el listado de clientes. Desde el módulo <strong>Contactos</strong>, filtramos por tipo "Cliente", seleccionamos todos los registros y pulsamos <em>Acciones → Exportar</em>.</p>
+
+            <div class="placeholder">
+                [CAPTURA 6] · Listado de contactos filtrado por "Cliente"
+            </div>
+
+            <p>En la ventana que aparece elegimos los campos: <em>Nombre</em>, <em>Email</em>, <em>Teléfono</em>, <em>Ciudad</em> y <em>País</em>. Como formato seleccionamos XLSX y descargamos el archivo.</p>
+
+            <div class="placeholder">
+                [CAPTURA 7] · Archivo Excel con los clientes exportados (abierto en LibreOffice/Excel)
+            </div>
+
+            <p>El archivo resultante se puede usar luego en otros programas (LibreOffice Calc, Excel, Google Sheets…) o importarlo en otro sistema.</p>
+        </article>
+
+        <article>
+            <h2>Otras formas de extraer información</h2>
+            <p>Aparte de la exportación manual, Odoo ofrece otras maneras de sacar datos del sistema:</p>
+            <ul>
+                <li><strong>API XML-RPC / JSON-RPC:</strong> permite que otros programas se conecten a Odoo y consulten o actualicen datos.</li>
+                <li><strong>Acceso directo a PostgreSQL:</strong> si se tienen los conocimientos, se puede consultar la base de datos con SQL.</li>
+                <li><strong>Informes Excel personalizados (Studio):</strong> en la versión Enterprise se pueden diseñar informes en Excel a medida.</li>
+            </ul>
+
+            <div class="aviso">
+                <strong>Cuidado:</strong> hacer cambios directamente sobre la base de datos PostgreSQL puede dejar Odoo en un estado inconsistente. Salvo para consultas, se recomienda usar siempre la propia interfaz o la API.
+            </div>
+        </article>
+
+        <article>
+            <h2>Conclusión del proyecto</h2>
+            <p>Con esta página se cubre el último apartado del proyecto: la elaboración de informes y la extracción / exportación de información, que junto con la instalación, la administración y los mecanismos de seguridad, completan los criterios de evaluación del RA7.</p>
+            <a href="index.html" class="boton">← Volver al inicio</a>
+        </article>
+    </main>
+
+    <aside>
+        <h3>Formatos de exportación</h3>
+        <div class="dato"><p>📄 CSV</p></div>
+        <div class="dato"><p>📊 XLSX (Excel)</p></div>
+        <div class="dato"><p>📕 PDF (informes)</p></div>
+
+        <h3>Vistas disponibles</h3>
+        <div class="dato"><p>📋 Lista</p></div>
+        <div class="dato"><p>🗂 Kanban</p></div>
+        <div class="dato"><p>📊 Pivot</p></div>
+        <div class="dato"><p>📈 Gráfico</p></div>
+    </aside>
+
+    <footer>
+        <p>Proyecto SGE · Odoo &copy; 2026</p>
+        <p>
+            <a href="https://github.com" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://facebook.com" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://twitter.com" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        </p>
+    </footer>
+
+    <button id="subirArriba" onclick="subirArriba()" title="Subir arriba">
+        <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
